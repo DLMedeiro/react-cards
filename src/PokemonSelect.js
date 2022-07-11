@@ -23,5 +23,5 @@ function PokemonSelect({ add, pokemon = pokemonList }) {
     </div>
   );
 }
-
+ 
 export default PokemonSelect;
