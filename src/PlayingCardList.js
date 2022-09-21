@@ -8,7 +8,11 @@ import useAxios from "./hooks/useAxios";
 /* Renders a list of playing cards.
  * Can also add a new card at random. */
 function CardTable() {
-  const [cards, setCards] = useAxios("https://deckofcardsapi.com/api/deck/new/draw/");
+  const [cards, setCards] = useAxios(
+    "https://deckofcardsapi.com/api/deck/new/draw/"
+  );
+
+  // Removed and added to hook function
   // const addCard = async () => {
   //   const response = await axios.get(
   //     "https://deckofcardsapi.com/api/deck/new/draw/"
@@ -22,7 +26,7 @@ function CardTable() {
         <button onClick={setCards}>Add a playing card!</button>
       </div>
       <div className="PlayingCardList-card-area">
-        {cards.map(cardData => (
+        {cards.map((cardData) => (
           <PlayingCard key={cardData.id} front={cardData.cards[0].image} />
         ))}
       </div>
